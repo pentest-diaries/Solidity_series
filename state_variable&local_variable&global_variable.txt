@@ -1,0 +1,51 @@
+State.sol:
+
+//SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >= 0.5.0 < 0.9.0;
+
+contract State
+{
+    uint public age;
+    
+    function setAge() public 
+    {
+        age=10;
+    }
+}
+
+================================================
+
+Local.sol:
+
+//SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >= 0.5.0 < 0.9.0;
+
+contract local
+{
+    string name="rohan"; //state
+    
+    function store() pure public returns(uint)
+{
+    uint age=11; // local
+    return age;
+}
+}
+
+=================================================
+Global.sol
+
+//SPDX-License-Identifier: GPL-3.0
+
+pragma solidity ^0.8.0;
+
+contract globalVariable{
+
+    address public myadd = msg.sender;
+    uint public time = block.timestamp;
+    uint public diff = block.difficulty;
+    uint public gascost = tx.gasprice;
+}
+
+==================================================
